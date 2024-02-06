@@ -1,0 +1,153 @@
+
+body{
+    background-image: url("../media/dollars-bg.png");
+    background-repeat: repeat;
+    animation-name: backmove; /* call the name defined below */
+    animation-duration: 50s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    
+    
+}
+
+
+@keyframes backmove {	
+	0% {
+		background-position: 0% 0%;	
+	}
+
+    100% {		
+		background-position: 0% 120%;	
+	}
+}
+
+
+.wrapper{
+    background-color: wheat;
+    width: 80%;
+    margin:auto;
+    display: grid; 
+    grid-template-columns: 20% 80%; 
+    /* grid-template-rows: 1fr 2fr 0.5fr; */ 
+    gap: 0px 0px; 
+    grid-template-areas: 
+      "header header"
+      "nav main"
+      "footer footer"; 
+}
+
+header{
+    margin:5px;
+  
+    grid-area: header;
+}
+
+#logo{
+    float:left;
+    margin: 10px;
+}
+
+#banner-text{
+    text-align: center;
+    padding: 30px 0;
+}
+
+#banner-text h3{
+    font-family: "Pacifico", sans-serif;
+    font-weight: 100;
+    font-size: x-large;
+}
+
+nav{
+    grid-area: nav;
+    border: 2px dashed green;
+    margin: 10px;
+    padding: 10px;
+    
+    min-width: 130px;
+}
+
+nav ul li{
+    list-style: none;
+    padding-bottom: 10px;
+}
+
+nav ul li:hover{
+    background-color: white;
+}
+
+
+main{
+    grid-area: main;
+    border: 2px dashed red;
+    margin: 10px;
+    padding: 10px;
+}
+
+.welcome_menu li{
+    list-style-type: none;
+    padding-bottom: 10px;
+}
+
+footer{
+    text-align: left;
+    padding: 10px;
+}
+.form_container label input{
+    display:block;
+}
+
+
+table, tbody, th, td {
+    border: 1px solid;
+  }
+
+#fixed{
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    background-color: rgb(117, 171, 142);
+    color:rgb(220, 66, 66)
+}
+
+
+@media screen and (max-width: 1000px){     
+
+    .wrapper{
+        display: grid; 
+        grid-template-columns: 600px; 
+        grid-template-areas: 
+        "banner-text"
+        "header"
+        "nav"
+        "main"
+        "footer";
+        max-width: 600px; 
+    }      
+
+#banner-text{
+    grid-area: banner-text;
+    word-wrap: break-word;
+}
+
+    nav{
+        grid-area: nav;
+        border: 2px dashed green;
+        margin: 10px;
+        padding: 10px;
+        
+        max-width: 400px;
+    }
+
+    main{
+        grid-area: main;
+        border: 2px dashed red;
+        margin: 10px;
+        padding-left: 10px;
+        max-width: 400px;   
+    }
+
+    footer{
+        grid-area: footer;
+    }
+}
